@@ -1,2 +1,27 @@
 # Tema3_PC
 Implementarea unui client care sa interactioneze cu un REST API.
+
+Tema 3 Protocoale de Comunicare
+							  Client Web. Comunicatie cu REST API.
+Tema a fost realizata timp de 1 zi.
+
+Descriere implementare: 
+In realizarea temei am folosit functii din laboratorul 10 (Protocolul HTTP)
+(ex. compute_post_request(), compute_get_request()) pe care le-am adaptat
+pentru a compune mesejul conform cerintelor, pe langa aceste functii, am mai 
+facut inca o functie care formeaza mesajul de delete (compute_delete_request()).
+	S-a implementat modulul client care realizeaza o conectiune cu serverul
+	HOST: ec2-3-8-116-10.eu-west-2.compute.amazonaws.com si PORT: 8080, 
+	astfel clientul primeste anumite comenzi de la tastatura si trimite in
+	functie de comanda, cereri catre server.
+Clientul daca primeste o comanda nevalida trateaza eroarea si propune 
+utilizatorului sa introduca o comanda valida, in cazul primirei unei comenzi
+valide executa anumite instructiuni reprezentative comenzii.
+
+Pentru parsarea inputului in format JSON astfel incat sa trimitem o cerere valida
+spre server am folosi functiile parson (https://github.com/kgabis/parson).
+
+Tratare eroare: Pentru orice input care va fi parsat catre server verific mai intai
+daca este != NULL sau in cazul Id verifica daca este numar cu ajutorul functiei isNumber();
+In caz-ul in care utilizatorul introduce ceva gresit printez un mesaj corespunzator si ofer
+posibilitatea de a introduce din nou o informatie valida.
